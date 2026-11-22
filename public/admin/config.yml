@@ -1,0 +1,80 @@
+backend:
+  name: github
+  repo: ien-info/craftpedia
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  # English Collections
+  - name: "worlds_en"
+    label: "🌍 [EN] Worlds & Experiences"
+    folder: "worlds"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Player Name", name: "author", widget: "string" }
+      - { label: "Minecraft Version", name: "version", widget: "string", default: "1.21.4" }
+      - { label: "Content", name: "body", widget: "markdown" }
+
+  - name: "packs_en"
+    label: "🧩 [EN] Mods, Shaders & Packs"
+    folder: "packs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Pack / Mod Name", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Mod", "Modpack", "Resource Pack", "Datapack", "Shader Pack"]
+      - { label: "Minecraft Version", name: "version", widget: "string", default: "1.21.4" }
+      - { label: "Download Link", name: "download", widget: "string", required: false }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  - name: "qna_en"
+    label: "❓ [EN] Community Q&A"
+    folder: "qna"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Question Title", name: "title", widget: "string" }
+      - { label: "Question & Answer", name: "body", widget: "markdown" }
+
+  # Myanmar Collections
+  - name: "worlds_my"
+    label: "🌍 [MY] Worlds & Experiences (မြန်မာ)"
+    folder: "my/worlds"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "ခေါင်းစဉ် (Title)", name: "title", widget: "string" }
+      - { label: "ရေးသားသူ (Player Name)", name: "author", widget: "string" }
+      - { label: "Minecraft Version", name: "version", widget: "string", default: "1.21.4" }
+      - { label: "အကြောင်းအရာ (Content)", name: "body", widget: "markdown" }
+
+  - name: "packs_my"
+    label: "🧩 [MY] Mods, Shaders & Packs (မြန်မာ)"
+    folder: "my/packs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Pack / Mod အမည်", name: "title", widget: "string" }
+      - label: "အမျိုးအစား (Category)"
+        name: "category"
+        widget: "select"
+        options: ["Mod", "Modpack", "Resource Pack", "Datapack", "Shader Pack"]
+      - { label: "Minecraft Version", name: "version", widget: "string", default: "1.21.4" }
+      - { label: "Download Link", name: "download", widget: "string", required: false }
+      - { label: "အသေးစိတ် ရှင်းလင်းချက်", name: "body", widget: "markdown" }
+
+  - name: "qna_my"
+    label: "❓ [MY] Q&A အမေးအဖြေများ (မြန်မာ)"
+    folder: "my/qna"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "မေးခွန်း ခေါင်းစဉ်", name: "title", widget: "string" }
+      - { label: "မေးခွန်းနှင့် အဖြေ အသေးစိတ်", name: "body", widget: "markdown" }
