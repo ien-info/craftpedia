@@ -2,6 +2,7 @@ backend:
   name: github
   repo: ien-info/craftpedia
   branch: main
+  base_url: https://sveltia-cms-auth.thwinthithtoo15.workers.dev
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
